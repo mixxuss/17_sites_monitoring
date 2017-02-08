@@ -2,7 +2,6 @@ import requests
 import argparse
 import time
 
-
 def create_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('-p', '--path', help='Path to sites list')
@@ -30,6 +29,9 @@ def get_domain_expiration_date(domain_name):
     response = requests.get('http://htmlweb.ru/analiz/api.php', params=params)
     return response.json()['paid']
 
+
+def is_domain_expires_in_month(expire_date):
+    pass
 
 if __name__ == '__main__':
     parsed_args = create_parser()
